@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- This part of the layout is exclusively for the underlying gradient background and etc -->
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_list"/>
+    <!-- Time for the invisible top layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAvatar"
+            android:layout_margin="14dp"
+            android:layout_width="100dp"
+            android:background="#ffd6d3"
+            android:padding="10dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher_round" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KAwuah93"
+            android:gravity="center"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:textColor="@color/white_smoke"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#933c94"
+                    android:text="Followers"
+                    android:textAlignment="center"
+                    android:textColor="@color/white_smoke"
+                    android:textSize="24dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#933c94"
+                    android:id="@+id/tvFollowersCount"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/white_smoke"
+                    android:textSize="24dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#933c94"
+                    android:text="Following"
+                    android:textAlignment="center"
+                    android:textColor="@color/white_smoke"
+                    android:textSize="24dp"/>
+                <TextView
+                    android:id="@+id/tvFollowingCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#933c94"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/white_smoke"
+                    android:textSize="24dp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Body of the profile view -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/alice_blue"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvCompany"
+                android:text="Mobile Apps Company"
+                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvLocation"
+                android:text="Atlanta, GA"
+                android:textSize="22dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvBio"
+                android:textSize="18dp"
+                android:text="An Android Developer with a focus on User experience and Visual appreciation of an application and product. Let's talk about your latest project together!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvRepoCount"
+                android:textSize="20dp"
+                android:textColor="@color/dark_salmon"
+                android:text="Repos: 10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        
+
+    </LinearLayout>
+
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Repos"
+        android:background="#933c94"
+        android:textColor="@color/alice_blue"
+        android:layout_width="match_parent"
+        android:onClick="toRepo"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
